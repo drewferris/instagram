@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html ng-app="InstaApp">
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <title></title>
+  </head>
+  <body >
+    <ng-view></ng-view>
+    <div ng-controller="MediaController as mediactrl" ng-init="mediactrl.getMedia()">
+      <div style="height: 305px">
+        <div carousel active="mediactrl.active" interval="mediactrl.myInterval" no-wrap="mediactrl.noWrapSlides">
+          <div slide ng-repeat="media in mediactrl.medias">
+              <img ng-src="{{media.images.thumbnail.url}}" title="{{media.user.username}}">
+            </div>
+          </div>
+        <media-list medias="mediactrl.medias"></media-list>
+        </div>
+      </div>
+    </div>
+    <script src="./bundle.js"></script>
+    <script src="../libs/ui-bootstrap-tpls.js"></script>
+    <script src="../libs/ui-bootstrap.js"></script>
+  </body>
+</html> -->
+<!doctype html>
+<html ng-app="InstaApp">
+  <head>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+    <script src="example.js"></script> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div ng-controller="MediaController" ng-init="getMedia()">
+  <div style="height: 305px">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in slides track by slide.position" index="slide.position">
+        <img ng-src="{{slide.images.standard_resolution.url}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{slide.position}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+      <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="noWrapSlides">
+          Disable Slide Looping
+        </label>
+      </div>
+    </div>
+    <div class="col-md-6">
+      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+      <br />Enter a negative number or 0 to stop the interval.
+    </div>
+  </div> -->
+</div>
+<script src="./bundle.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="InstaApp">
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <title></title>
+  </head>
+  <body >
+    <ng-view></ng-view>
+    <div ng-controller="MediaController as mediactrl" ng-init="mediactrl.getMedia()">
+      <div style="height: 305px">
+        <div carousel active="mediactrl.active" interval="mediactrl.myInterval" no-wrap="mediactrl.noWrapSlides">
+          <div slide ng-repeat="media in mediactrl.medias">
+              <img ng-src="{{media.images.thumbnail.url}}" title="{{media.user.username}}">
+            </div>
+          </div>
+        <!-- <media-list medias="mediactrl.medias"></media-list> -->
+        </div>
+      </div>
+    </div>
+    <script src="./bundle.js"></script>
+    <!-- <script src="../libs/ui-bootstrap-tpls.js"></script>
+    <script src="../libs/ui-bootstrap.js"></script> -->
+  </body>
+</html>
