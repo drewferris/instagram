@@ -7,11 +7,7 @@ const superagent = require('superagent');
 
 app.use(express.static(__dirname + '/build'));
 
-var clientId = '17ab378eaf61427fa6e2a2e9b9d4a114';
-var redirect_uri = 'http://localhost:3000/feed';
-var instaLink = 'https://api.instagram.com/oauth/authorize/?client_id=' + clientId + '&redirect_uri=' + redirect_uri + '&response_type=code';
-var client_secret = 'da8a30bd0d534b258444669ca4ab9bbd';
-var access_token = '225992368.17ab378.480d7b2adf5d4efab215ea16a37b6e9d';
+
 
 app.get('/', function(req, res) {
   console.log('Visited Index');
